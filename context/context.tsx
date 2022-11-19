@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  FC,
-  ReactNode,
-  useContext,
-  useState
-} from 'react'
+import React, { createContext, FC, useContext, useState } from 'react'
 
 export type MarvelContext = {
   children?: React.ReactNode
@@ -15,6 +9,7 @@ const AppContext = createContext({} as MarvelContext)
 
 export const AppProvider: FC<MarvelContext> = ({ children }) => {
   const [name, setName] = useState<string>('hello')
+
   return <AppContext.Provider value={{ name }}>{children}</AppContext.Provider>
 }
 
