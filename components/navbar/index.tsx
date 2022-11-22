@@ -7,21 +7,25 @@ import Link from 'next/link'
 export const Navbar = () => {
   return (
     <Wrapper>
-      <div className="navbar-center">
-        <div className="navbar-header">
-          <Link href="/">
-            <Image
-              src={logo}
-              alt="marvel-logo"
-              className="logo"
-              priority={true}
-            />
-          </Link>
-          <button type="button" className="side-bar-btn">
-            <FaBars />
-          </button>
-        </div>
+      <div className="navbar-top">
+        <Link href="/">
+          <Image
+            src={logo}
+            alt="marvel-logo"
+            className="logo"
+            priority={true}
+          />
+        </Link>
+        <button type="button" className="side-bar-btn">
+          <FaBars />
+        </button>
       </div>
+      <ul className="nav-links">
+        <li>news</li>
+        <li>comics</li>
+        <li>movies</li>
+        <li>games</li>
+      </ul>
     </Wrapper>
   )
 }
@@ -29,29 +33,45 @@ export const Navbar = () => {
 const Wrapper = styled.nav`
   height: 52px;
   background: #202020;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .nav-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: var(--max-width);
-  }
-  .nav-header {
+
+  .navbar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .logo {
-      width: 175px;
-      margin-left: -15px;
-    }
+    padding: 0 2rem;
   }
-  .nav-toggle {
+  .logo {
+    width: 130px;
+    height: 52px;
+    margin: 0 auto;
+  }
+  .side-bar-btn {
     background: transparent;
     border: transparent;
-    color: var(--clr-primary-5);
     cursor: pointer;
-    svg {
-      font-size: 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    display: none;
+    height: 40px;
+    background: #202020;
+    color: #fff;
+  }
+  @media screen and (min-width: 839px) {
+    .navbar-top {
+      justify-content: center;
     }
+    .side-bar-btn {
+      display: none;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        padding: 0 2rem;
+      }
+    }
+  }
 `
