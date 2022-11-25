@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 import { FaTimes } from 'react-icons/fa'
+import { useGlobalContext } from '../../context/context'
 
 export const Sidebar = () => {
-  const isSidebarOpen = true
+  const { isSidebarOpen, closeSidebar } = useGlobalContext()
+  console.log(isSidebarOpen)
   return (
     <Wrapper>
       <div className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
         <div className="sidebar-header">
-          <button className="close-btn">
+          <button className="close-btn" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -35,6 +37,7 @@ const Wrapper = styled.div`
     color: red;
     padding: 0 2rem;
     font-size: 1.2rem;
+    transition: var(--transition);
   }
   .sidebar {
     position: fixed;
@@ -42,7 +45,8 @@ const Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -100;
+    transition: var(--transition);
   }
   .show-sidebar {
     transform: translate(0);
@@ -52,7 +56,7 @@ const Wrapper = styled.div`
   .nav-links {
     padding: 1rem 2rem;
     li {
-      color: #fff;
+      color: red;
       text-transform: uppercase;
     }
   }

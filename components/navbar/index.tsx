@@ -3,8 +3,10 @@ import logo from '../../public/logo.svg'
 import Image from 'next/image'
 import { FaBars } from 'react-icons/fa'
 import Link from 'next/link'
+import { useGlobalContext } from '../../context/context'
 
 export const Navbar = () => {
+  const { openSidebar } = useGlobalContext()
   return (
     <Wrapper>
       <div className="navbar-top">
@@ -16,7 +18,7 @@ export const Navbar = () => {
             priority={true}
           />
         </Link>
-        <button type="button" className="side-bar-btn">
+        <button type="button" className="side-bar-btn" onClick={openSidebar}>
           <FaBars />
         </button>
       </div>
