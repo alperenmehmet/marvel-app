@@ -7,7 +7,9 @@ export const Sidebar = () => {
   console.log(isSidebarOpen)
   return (
     <Wrapper>
-      <div className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <aside
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
+      >
         <div className="sidebar-header">
           <button className="close-btn" onClick={closeSidebar}>
             <FaTimes />
@@ -19,7 +21,7 @@ export const Sidebar = () => {
           <li>movies</li>
           <li>games</li>
         </ul>
-      </div>
+      </aside>
     </Wrapper>
   )
 }
@@ -47,19 +49,23 @@ const Wrapper = styled.div`
     height: 100%;
     z-index: -100;
     transition: var(--transition);
+    transform: translate(-100%);
   }
   .show-sidebar {
     transform: translate(0);
     z-index: 999;
     background: #202020;
   }
+
   .nav-links {
     padding: 1rem 2rem;
+
     li {
       color: red;
       text-transform: uppercase;
     }
   }
+
   @media screen and (min-width: 839px) {
     .sidebar {
       display: none;
