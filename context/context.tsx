@@ -4,7 +4,6 @@ import { reducer } from '../reducers/reducer'
 
 export type MarvelContext = {
   children?: React.ReactNode
-  name?: string
   openSidebar: any
   closeSidebar: any
   isSidebarOpen: boolean
@@ -25,11 +24,14 @@ export const AppProvider: FC<MarvelContext> = ({ children }) => {
   const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE })
   }
-  return (
-    <AppContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
-      {children}
-    </AppContext.Provider>
-  )
+
+  const value = {
+    ...state,
+    openSidebar,
+    closeSidebar
+  }
+
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
 export const useGlobalContext = () => {

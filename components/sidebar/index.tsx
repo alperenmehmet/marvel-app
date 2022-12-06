@@ -4,7 +4,6 @@ import { useGlobalContext } from '../../context/context'
 
 export const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext()
-  console.log(isSidebarOpen)
   return (
     <Wrapper>
       <aside
@@ -63,6 +62,7 @@ const Wrapper = styled.div`
     li {
       color: red;
       text-transform: uppercase;
+      font-size: 12px;
     }
   }
 

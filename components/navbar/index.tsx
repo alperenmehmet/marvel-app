@@ -60,6 +60,7 @@ const Wrapper = styled.nav`
     background: #202020;
     color: #fff;
     text-transform: uppercase;
+    font-size: 12px;
   }
   @media screen and (min-width: 839px) {
     .navbar-top {
