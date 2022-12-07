@@ -23,10 +23,36 @@ export const Navbar = () => {
         </button>
       </div>
       <ul className="nav-links">
-        <li>news</li>
-        <li>comics</li>
-        <li>movies</li>
-        <li>games</li>
+        <li>
+          <Link className="link" href="/characters">
+            Characters
+          </Link>
+        </li>
+        <li>
+          <Link className="link" href="/comics">
+            Comics
+          </Link>
+        </li>
+        <li>
+          <Link className="link" href="/creators">
+            Creators
+          </Link>
+        </li>
+        <li>
+          <Link className="link" href="/events">
+            Events
+          </Link>
+        </li>
+        <li>
+          <Link className="link" href="/series">
+            Series
+          </Link>
+        </li>
+        <li>
+          <Link className="link" href="/stories">
+            Stories
+          </Link>
+        </li>
       </ul>
     </Wrapper>
   )
@@ -61,6 +87,10 @@ const Wrapper = styled.nav`
     color: #fff;
     text-transform: uppercase;
     font-size: 12px;
+  }
+
+  .link {
+    color: #fff;
   }
   @media screen and (min-width: 839px) {
     .navbar-top {

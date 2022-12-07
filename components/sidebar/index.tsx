@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { FaTimes } from 'react-icons/fa'
 import { useGlobalContext } from '../../context/context'
+import Link from 'next/link'
 
 export const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext()
@@ -15,10 +16,36 @@ export const Sidebar = () => {
           </button>
         </div>
         <ul className="nav-links">
-          <li>news</li>
-          <li>comics</li>
-          <li>movies</li>
-          <li>games</li>
+          <li>
+            <Link className="link" href="/characters">
+              Characters
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="/comics" onClick={closeSidebar}>
+              Comics
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="/creators" onClick={closeSidebar}>
+              Creators
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="/events" onClick={closeSidebar}>
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="/series" onClick={closeSidebar}>
+              Series
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="/stories" onClick={closeSidebar}>
+              Stories
+            </Link>
+          </li>
         </ul>
       </aside>
     </Wrapper>
@@ -58,12 +85,17 @@ const Wrapper = styled.div`
 
   .nav-links {
     padding: 1rem 2rem;
+    color: #fff;
 
     li {
       color: red;
       text-transform: uppercase;
       font-size: 12px;
     }
+  }
+
+  .link {
+    color: #fff;
   }
 
   @media screen and (min-width: 839px) {

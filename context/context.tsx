@@ -1,6 +1,6 @@
 import React, { createContext, FC, useContext, useReducer } from 'react'
-import { SIDEBAR_OPEN, SIDEBAR_CLOSE } from '../actions'
 import { reducer } from '../reducers/reducer'
+import { SIDEBAR_CLOSE, SIDEBAR_OPEN } from '../actions/action'
 
 export type MarvelContext = {
   children?: React.ReactNode
