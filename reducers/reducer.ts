@@ -1,6 +1,9 @@
-import { SIDEBAR_CLOSE, SIDEBAR_OPEN } from '../actions/action'
+import { SIDEBAR_CLOSE, SIDEBAR_OPEN, GET_CHARACTERS } from '../actions/action'
 
-type ACTION = { type: 'SIDEBAR_OPEN' } | { type: 'SIDEBAR_CLOSE' }
+type ACTION =
+  | { type: 'SIDEBAR_OPEN' }
+  | { type: 'SIDEBAR_CLOSE' }
+  | { type: 'GET_CHARACTERS' }
 
 type STATE = {
   isSidebarOpen: boolean
